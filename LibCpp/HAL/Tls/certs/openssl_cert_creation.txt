@@ -1,0 +1,13 @@
+openssl req -newkey rsa:2048 -new -nodes -x509 -days 3650 -keyout key.pem -out cert.pem
+
+Anzeigen der Zertifikatkette eiens Servers:
+openssl s_client -showcerts stackoverflow.com:443
+
+Configure trusted root CAs for OpenSSL:
+see: https://stackoverflow.com/questions/25156180/how-to-list-certificates-trusted-by-openssl
+Download trusted CA .pem file from https://curl.se/docs/caextract.html
+Rename the file to cert.pem and place it to the foulder: C:\Program Files\Common Files\SSL
+You can find this foulder by: openssl version -d
+
+Updating Linux Ubuntu 22.04 to OpenSSL 3.1:
+https://softwarecosmos.com/how-to-upgrade-openssl-to-3-1-on-ubuntu-22-04/

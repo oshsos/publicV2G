@@ -1,0 +1,8 @@
+/** \page Page_LibIso15118 ISO 15118 stack library
+
+\brief Classes of the ISO 15118 stack
+
+This library contains the ISO 15118 stack for vehicle to grid communication.
+
+\image html LibIso15118_ClassDiagrams.svg
+**/

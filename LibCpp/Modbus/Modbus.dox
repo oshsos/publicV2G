@@ -1,0 +1,108 @@
+/**
+
+- Recherche und Bewertung verfügbarer Modbus-Stacks
+
+Die Nummer 17 (Feaser mircroTbx-modbus) ist die mit Abstand beste implementierung, allerdings
+nur für Open Source Projekte frei.
+
+Die Nummer 19 (nanoMODBUS) ist eine freie Implementierung und instanzierbar angelegt und
+damit ebenfalls eine sehr gute Wahl.
+
+1. Chipkin
+
+Kommerziell, auf globalen Funktionen aufbauend und damit nicht instanzierbar.
+
+ 2. rt-labs
+
+Kommerziell, auf Betriebssystem bzw. RTOS aufbauend.
+
+3. Nanotec
+
+kommerziell, nicht open source, Konzept undkar
+
+4. Espressif
+
+kommerziell, auf gobalen Funktionen aufbauend und damit nicht instanzierbar.
+
+5. a-int
+
+nur Modbus-TCP, auf LwIP und RTOS basierend.
+
+6. tpcorrea
+
+schlechte Dokumentation, konzipiert für Arduino STM32, C++ aber Konzept unklar
+
+7. Embedded there
+
+Wohl kein richtiger Stack, nur kleines Beispiel für STM32.
+
+8. XiaoJSoft mbstack-ucosiii auf Gitee
+
+auf globalen Funktionen aufbauend und damit nicht instanzierbar
+
+9. SILA / embedded experts 7 FreeMODBUS
+
+Frei für open source Projekte, sonst kommerziell
+Offenbar globale Funktionen und damit nicht instanzierbar
+Portierungen auf viele Hardware-Varianten vorhanden, HAL mittels globaler Funktionen.
+
+10. Arduino Modbus library
+
+Dokumentation schlecht, wohl auf globalen Funktionen aufbauend und damit nicht instanzierbar.
+
+11. Real time automation
+
+Nicht erreichbar
+
+12. r0tary Modbus-STM32WB
+
+Konzept unklar, fehlendes Beispiel, wohl spezifisch für STM32WB
+
+13. Atlassian uC/Modbus
+
+kommerziell, auf globalen Funktionen aufbauend und damit nicht instanzierbar
+
+14. Segger emModbus
+
+kommerziell, offenbar auf globalen Funktionen aufbauend und damit nicht instanzierbar
+Konzept mangels Beispielen auf die Schnelle nicht erkennbar.
+
+15. Renesas Utthunga
+
+Ausschließlich TCP, Konzept auf die Schnelle nicht bewertbar und nicht beschrieben.
+
+16. lotoohe-space / XTinyModbus
+
+HAL durch globale Funktionen,
+möglicherweise instanzierbare C-Implementierung, allerdings durch globalen HAL unbrauchbar,
+Beispiele undeutlich
+
+17. Feaser MicroTBX-Modbus
+
+Instanzierbare C-Programmierung mit C++ wrappern.
+Scheinbar auch instanzierbare HAL Ports.
+Sehr gute Realisierung!
+Frei für open-source Projekte, sonst kommerziell
+
+18. FreePLC/OpenModbus
+
+Globale Funktionen für HAL Layer, keine Dokumentation, aufwendige Implementierung der Application
+
+19. nanoMODBUS
+
+Offenbar freie Implementierung,
+C-Implementierung, instanzierbar.
+HAL per globalen Funktionen aber scheinbar auch instanzierbar angelegt.
+https://github.com/debevv/nanoMODBUS
+
+20. embien RAPIDSEA Modbus Protocol Stack
+
+Offenbar kommerziell,
+Konzept ist nicht dargestellt und bewertbar.
+
+21. SoftDel softMOD
+
+Kommerziell,
+Konzept ist nicht dargestellt und bewertbar.
+
+*/

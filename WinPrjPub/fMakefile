@@ -1,0 +1,56 @@
+.PHONY : clean all
+
+# Compiler to be used
+CC=gcc
+CXX=g++
+
+# Standard flags to be used
+CXXFLAGS = -fPIC -std=gnu++14 -pthread -Wall -static-libgcc
+CFLAGS = -fPIC -pthread -Wall -static-libgcc
+LNKFLAGS = -static-libgcc
+
+# Reading the project specific configurations
+# PROGRAMNAME =
+# DEFINES =
+# INCLUDES =
+# CPPFILES =
+# CFILES = 
+# STATLIBS =
+# DYNLIBS =
+# DYNLIBDIRS =
+# CXXFLAGS =
+# CFLAGS =
+
+include sources
+
+OUTPUT := ./bin
+
+SOURCE_DIRS := $(dir $(CPPFILES))
+SOURCE_DIRS += $(dir $(CFILES))
+VPATH = $(sort $(SOURCE_DIRS))
+
+CPP_FILENAMES := $(notdir $(CPPFILES))
+C_FILENAMES := $(notdir $(CFILES))
+
+OBJ_FILES := $(patsubst %.cpp, $(OUTPUT)/%.o, $(CPP_FILENAMES) )
+OBJ_FILES += $(patsubst %.c, $(OUTPUT)/%.o, $(C_FILENAMES) )
+
+all : $(OUTPUT)/$(PROGRAMNAME)
+
+$(OUTPUT)/$(PROGRAMNAME) : $(OBJ_FILES)
+	g++ $(LNKFLAGS) $(DYNLIBDIRS) -o $@ $^ $(STATLIBS) $(DYNLIBS)
+
+$(OUTPUT)/%.o : %.cpp
+	$(CXX) $(CXXFLAGS) $(DEFINES) $(INCLUDES) -c $< -o $@
+
+$(OUTPUT)/%.o : %.c
+	$(CC) $(CFLAGS) $(DEFINES) $(INCLUDES) -c $< -o $@
+
+clean:
+ifeq ($(OS),Windows_NT)    # is always Windows_NT on XP, 2000, 7, Vista, 10...
+	del /Q "$(OUTPUT)\*.o"
+	del /Q "$(OUTPUT)\*.exe"
+else
+	rm -fr $(OUTPUT)/*.o
+	rm -fr $(OUTPUT)/$(PROGRAMNAME)
+endif

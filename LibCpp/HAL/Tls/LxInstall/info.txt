@@ -1,0 +1,3 @@
+Copy all .so files from the previous foulder (Tls) to your executable foulder.
+Follow the steps of openssl/into.txt
+

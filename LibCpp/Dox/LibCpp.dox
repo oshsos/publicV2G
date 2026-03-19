@@ -1,0 +1,64 @@
+/**
+\defgroup G_LibCpp LibCpp
+\brief KEA general C++ source code library (LibCpp)
+
+For an overview see \ref Page_LibCpp.
+
+\defgroup G_LibCpp_Classes General library classes
+\ingroup G_LibCpp
+\brief General hardware independend classes not belonging to any group
+
+\defgroup G_LibCpp_HAL Hardware abstaction layer interface
+\ingroup G_LibCpp
+\brief Classes interfacing to hardware dependend implementations
+
+\defgroup G_LibCpp_HAL_GLOB Hardware abstacted global functions
+\ingroup G_LibCpp
+\brief Functions required to use hardware dependend implementations
+
+\defgroup G_LibCpp_HAL_Linux Linux hardware dependent implementations
+\ingroup G_LibCpp
+\brief Classes for Linux systems inheriting from the HAL interfacing abstract classes
+according to the \ref G_LibCpp_HAL.
+
+\defgroup G_LibCpp_HAL_Windows Windows hardware dependent implementations
+\ingroup G_LibCpp
+\brief Classes for Windows systems inheriting from the HAL interfacing abstract classes
+according to the \ref G_LibCpp_HAL.
+
+\page Page_LibCpp Introduction to the KEA general C++ source code library (LibCpp)
+
+For details of the software module refer to \ref G_LibCpp.
+
+\section SEC_LibCpp_Introduction Introduction
+The base of the KEA C++ source code library is the definition of a hardware abstraction layer
+based on virtual classes.
+
+- \ref G_LibCpp_HAL
+
+Only a few definition are provided by a set of global functions.
+
+- \ref  G_LibCpp_HAL_GLOB
+
+Implementations are provided for several computing platforms:
+
+- \ref G_LibCpp_HAL_Linux
+- \ref G_LibCpp_HAL_Windows
+
+and several other micro controller systems.\n
+\n
+Furthermore, general functionality is provided by hardware independent classes either having
+no need for hardware access at all or using the hardware abstraction layer to do so
+is provided as well.
+
+- \ref G_LibCpp_Classes
+
+\section SEC_LibCpp_HAL Hardware Abstraction Layer
+
+The following graph gives an overwiew over ethernet communication related classes of the hardware
+abstraction layer. All are derived from the general interface class 'LibCpp::cFramePort' encapsulating
+send and receive of byte arrays.
+
+\image html LibCpp_ClassDiagrams.svg
+
+**/

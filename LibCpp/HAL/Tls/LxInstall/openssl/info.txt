@@ -1,0 +1,7 @@
+Copy all files to the foulder /usr/local/lib64/openssl
+Copy openssl.conf to /etc/ld.so.conf.d
+Call ldconfig
+
+Raspberry:
+Copy all archiev files to /usr/local/lib
+Call ldconfig

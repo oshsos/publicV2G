@@ -1,0 +1,2 @@
+Copy all archiev files to /usr/local/lib
+Call ldconfig

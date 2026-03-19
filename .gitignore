@@ -1,0 +1,13 @@
+/build*
+/debug*
+/release*
+/html*
+.qtc_clangd/
+.hg/
+.hgignore
+.hgsub
+.hgsubstate
+*.bak
+*.org
+*.o
+

@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<IsoCharging Configuration="standard secc">
+  <Configuration instance="standard secc">
+    <StackType>secc<Options>secc, evcc</Options></StackType>
+    <Interface>Ethernet<Options>Ethernet, WLAN, eth0, ...</Options></Interface>
+    <SchemaID>3<Options>Integer - ID3: din=1 iso=0; IONIQ5: din=1 iso=2; Codico: din=2 iso=3; dSpace: iso=10</Options></SchemaID>
+    <EASourceIP>192.168.0.6<Options>e.g.: 192.168.0.6</Options></EASourceIP>
+    <TLS>false<Options>Provide TLS communication: true, false</Options></TLS>
+    <TransferMode>AC-3phase<Options>AC-3phase, AC-1phase, DC-core, DC-combo, DC-unique, DC-extended</Options></TransferMode>
+  </Configuration>
+  <Configuration instance="standard evcc">
+    <StackType>evcc<Options>secc, evcc</Options></StackType>
+    <Interface>Ethernet<Options>Ethernet, WLAN, eth0, ...</Options></Interface>
+    <SchemaID>3<Options>Integer - ID3: din=1 iso=0; IONIQ5: din=1 iso=2; Codico: din=2 iso=3; dSpace: iso=10</Options></SchemaID>
+    <EASourceIP>192.168.0.6<Options>e.g.: 192.168.0.6</Options></EASourceIP>
+    <TLS>false<Options>Provide TLS communication: true, false</Options></TLS>
+    <TransferMode>AC-3phase<Options>AC-3phase, AC-1phase, DC-core, DC-combo, DC-unique, DC-extended</Options></TransferMode>
+  </Configuration>
+  <Configuration instance="DC secc">
+    <StackType>secc<Options>secc, evcc</Options></StackType>
+    <Interface>Ethernet<Options>Ethernet, WLAN, eth0, ...</Options></Interface>
+    <SchemaID>3<Options>Integer - ID3: din=1 iso=0; IONIQ5: din=1 iso=2; Codico: din=2 iso=3; dSpace: iso=10</Options></SchemaID>
+    <EASourceIP>192.168.0.6<Options>e.g.: 192.168.0.6</Options></EASourceIP>
+    <TLS>false<Options>Provide TLS communication: true, false</Options></TLS>
+    <TransferMode>DC-core<Options>AC-3phase, AC-1phase, DC-core, DC-combo, DC-unique, DC-extended</Options></TransferMode>
+  </Configuration>
+  <Configuration instance="DC evcc">
+    <StackType>evcc<Options>secc, evcc</Options></StackType>
+    <Interface>Ethernet<Options>Ethernet, WLAN, eth0, ...</Options></Interface>
+    <SchemaID>3<Options>Integer - ID3: din=1 iso=0; IONIQ5: din=1 iso=2; Codico: din=2 iso=3; dSpace: iso=10</Options></SchemaID>
+    <EASourceIP>192.168.0.6<Options>e.g.: 192.168.0.6</Options></EASourceIP>
+    <TLS>false<Options>Provide TLS communication: true, false</Options></TLS>
+    <TransferMode>DC-core<Options>AC-3phase, AC-1phase, DC-core, DC-combo, DC-unique, DC-extended</Options></TransferMode>
+  </Configuration>
+</IsoCharging>

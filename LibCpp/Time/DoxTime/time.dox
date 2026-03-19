@@ -1,0 +1,85 @@
+/** \mainpage C++ class representing time
+
+\section SEC_INTRO Introduction
+
+This manual introduces the class 'LibCpp::cTime' encapsulating the C++ 'time.h'
+functions, thus providing easy to use time and date handling including time zone
+information. The class is provided by Olaf Simon at this
+<a href="https://github.com/OlafSimon/cTime">github repository</a>.
+
+ - [Overview page](README.md)
+
+Please refer to the following topic for further documentation.
+
+ - \ref LibCpp_time
+
+This library also supplies an ANSI C implementations of strptime usable for Windows and Linux as well as strftime.
+
+- LibOb_strptime()
+- LibOb_strftime()
+
+Both methods are used by 'LibCpp::cTime' and are optimized to be able to handle time
+zone information, which even strptime under Linux does not deliver. Windows doesn't
+provide this function at all. Among other functions the local time zone can be obtained by\n
+LibOb_localTimeZone().\n
+Refer to the following topic for further information.
+
+  - \ref LibOb_Time \n
+
+\section SEC_MOT Motivation
+
+When searching for an easy to use time and date class I typed "C++", "class" and "time" into the search engine.
+One of the first hits had been a
+<a href="https://stackoverflow.com/questions/1650715/is-there-a-standard-date-time-class-in-c">thread on stack overflow</a>
+addressing excatly my search. A question 13 years old. Answers are given till 2022 how to handle time. But a class to make
+it easy to use? No! Best adwise: use 'time.h' and write a wrapper for that. Yes, certainly, a class wrapping the 'time.h'
+functions, that was exactliy what I expected to find, but I didn't.
+
+I couldn't believe that this is state of the art after 50 years of digital data processing. No published class for time operations?
+
+OK, couldn't be that hart to write (and publish) a wrapper. 'time.h' should be prepared to deliver solutions for all tasks. Handling
+Unix time stamps, no problem. Converting time stamps to calendrical (and thus human readable) representations, yes existing. A numerical calendar representation
+is stored in the 'struct tm'. Day of month starting with 1 as expected, Month of year starting with 0 ??? Year starting at 1900 ???
+I understand something different for human understandable formats. I remembered the comment 'there is nothing wrong with them'. But at least
+this was the proof, a wrapper makes sense. Even DST (daylight saving time) is existing, makes sense, you want to know if your clock has already switched
+or not. The time zone .... Why is there no time zone ??? Well, not just a wrapper, additional functionality.
+
+Time to string conversions? 'strftime', OK, even with time zone formatting option. Why here but not there ???. Other way round. 'strptime' does the job.
+But why did I find this function in a linux manual? The answer is found on the discussion thread
+<a href="https://stackoverflow.com/questions/321849/strptime-equivalent-on-windows">'Is there a strptime implementation for windows existing'</a>?
+Many proposals. But non of them applicable.
+
+The features I desired for the searched time class are:
+
+- Integration of time zone information
+- Portable code (preferably using ANSI C)
+- Thread safety
+- No dependency of additional libraries
+
+I found these requirements being reasonable, if not necessary. You might discuss the last requirement, but some contributors to the mentioned
+thread thought the same way. A time class is just a simple functionality and schould not require large dependencies. Just two files was my
+expectation. (The result are four files, as supplying 'strptime' in ANSI C seemed to make sense.)
+
+Further desirable features are:
+
+- Language support
+- Option for parsing calendrical strings without the need of a format string
+- Format string and function parameters compatible with the standard C 'strftime' definition (as far as possible)
+
+My project got a little bit larger as expected and this repository is the result. Hopefully, this prevents programmers from writing
+wrappers for time operations any more.
+
+Please, provide me further language translations to add those to the library and report errors. There are simply too many possible cases
+to check them all.
+
+\defgroup LibCpp_time time
+\brief Group for time handling.
+For detailed description see LibCpp::cTime.
+
+\defgroup LibOb_Time strptime
+\brief Implementation of 'strptime' for windows (and Linux)
+The following describes the usage of the format string and gives some general Information.
+
+- [Overview page](README_strptime.md)
+
+**/
