@@ -83,7 +83,7 @@ the charging column with one program instance and the electric vehicle EV as a s
 You also may use two PCs, one as SE and the second as EV. Messages are exchanged through an Ehternet adapter even if you use
 a single computer.
 
-![Structure getting started on message level.](../Dox/Figures/GettingStartedMessage.svg)  
+![Structure getting started on message level.](./Dox/Figures/GettingStartedMessage.svg)  
 
 #### Compilation
 
