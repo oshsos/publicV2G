@@ -185,7 +185,7 @@ The sample application on signal level uses the power line communication (PLC) p
 ethernet message between the supply and the vehicle. It also includes the physical control pilot operation and
 detection.
 
-![Structure getting started on signal level.](./Dox/Figures/GettingStartedSignal.svg)  
+![Structure getting started on signal level.](Dox/GettingStartedSignal.svg)  
 
 This sample setup already requires specific hardware. The expression 'signal level' expresses that the communication between the PC simulating
 SE and EV is executed over real 'Power Line Communication' (PLC). For this setup an external modem converting Ethernet messages to PLC
@@ -227,7 +227,7 @@ system for charging colums or vehicles. By using this setup you can charge a rea
 hardware for a SE emulation and vice versa. Assuming a suitable EA power source (offered by Tektronix) is being available together with a
 CCS charging plug, this setup enables you to charge a real electric vehicle within under an hour of work.
 
-![Structure getting started on signal level.](./Dox/Figures/GettingStartedOperational.svg)  
+![Structure getting started on signal level.](Dox/GettingStartedOperational.svg)  
 
 You also can use such an emulation setup e.g. as a vehicle in order to support your develop of a supply equipment.
 
